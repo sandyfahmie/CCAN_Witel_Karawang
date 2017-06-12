@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbccanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LOOKUPRole">
+    <Key>
+      <PropertyRef Name="LOOKUPRoleID" />
+    </Key>
+    <Property Name="LOOKUPRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="100" />
+    <Property Name="RoleDescription" Type="varchar" MaxLength="500" />
+    <Property Name="RowCreatedSYSUserID" Type="int" Nullable="false" />
+    <Property Name="RowCreatedDateTime" Type="datetime" />
+    <Property Name="RowModifiedSYSUserID" Type="int" Nullable="false" />
+    <Property Name="RowModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SYSUser">
+    <Key>
+      <PropertyRef Name="SYSUserID" />
+    </Key>
+    <Property Name="SYSUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NIK" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PasswordEncryptedText" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="RowCreatedSYSUserID" Type="int" Nullable="false" />
+    <Property Name="RowCreatedDateTime" Type="datetime" />
+    <Property Name="RowModifiedSYSUserID" Type="int" Nullable="false" />
+    <Property Name="RowModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SYSUserProfile">
+    <Key>
+      <PropertyRef Name="SYSUserProfileID" />
+    </Key>
+    <Property Name="SYSUserProfileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SYSUserID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NIK" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gender" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Division" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RowCreatedSYSUserID" Type="int" Nullable="false" />
+    <Property Name="RowCreatedDateTime" Type="datetime" />
+    <Property Name="RowModifiedSYSUserID" Type="int" Nullable="false" />
+    <Property Name="RowModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SYSUserRole">
+    <Key>
+      <PropertyRef Name="SYSUserRoleID" />
+    </Key>
+    <Property Name="SYSUserRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SYSUserID" Type="int" Nullable="false" />
+    <Property Name="LOOKUPRoleID" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="RowCreatedSYSUserID" Type="int" Nullable="false" />
+    <Property Name="RowCreatedDateTime" Type="datetime" />
+    <Property Name="RowModifiedSYSUserID" Type="int" Nullable="false" />
+    <Property Name="RowModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TechInfo">
+    <Key>
+      <PropertyRef Name="TechInfoID" />
+    </Key>
+    <Property Name="TechInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TQ" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrderTime" Type="date" />
+    <Property Name="Address" Type="text" />
+    <Property Name="TeNOSScomment" Type="text" />
+    <Property Name="PIC" Type="varchar" MaxLength="50" />
+    <Property Name="AreaCode" Type="varchar" MaxLength="10" />
+    <Property Name="Metro" Type="varchar" MaxLength="50" />
+    <Property Name="GPON" Type="varchar" MaxLength="50" />
+    <Property Name="SN" Type="varchar" MaxLength="50" />
+    <Property Name="VLAN" Type="varchar" MaxLength="10" />
+    <Property Name="SurveyTime" Type="date" />
+    <Property Name="CustTag" Type="varchar" MaxLength="50" />
+    <Property Name="SurveyTech" Type="varchar" MaxLength="50" />
+    <Property Name="ODPTag" Type="varchar" MaxLength="50" />
+    <Property Name="PT1Com" Type="date" />
+    <Property Name="PT1End" Type="date" />
+    <Property Name="PT1Tech" Type="varchar" MaxLength="50" />
+    <Property Name="JTTime" Type="date" />
+    <Property Name="JTEnd" Type="date" />
+    <Property Name="comment" Type="text" />
+    <Property Name="ClosedTime" Type="date" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__SYSUserPr__SYSUs__36B12243">
+    <End Role="SYSUser" Type="Self.SYSUser" Multiplicity="1" />
+    <End Role="SYSUserProfile" Type="Self.SYSUserProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSUser">
+        <PropertyRef Name="SYSUserID" />
+      </Principal>
+      <Dependent Role="SYSUserProfile">
+        <PropertyRef Name="SYSUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SYSUserRo__LOOKU__3C69FB99">
+    <End Role="LOOKUPRole" Type="Self.LOOKUPRole" Multiplicity="1" />
+    <End Role="SYSUserRole" Type="Self.SYSUserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOOKUPRole">
+        <PropertyRef Name="LOOKUPRoleID" />
+      </Principal>
+      <Dependent Role="SYSUserRole">
+        <PropertyRef Name="LOOKUPRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SYSUserRo__SYSUs__3D5E1FD2">
+    <End Role="SYSUser" Type="Self.SYSUser" Multiplicity="1" />
+    <End Role="SYSUserRole" Type="Self.SYSUserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSUser">
+        <PropertyRef Name="SYSUserID" />
+      </Principal>
+      <Dependent Role="SYSUserRole">
+        <PropertyRef Name="SYSUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbccanModelStoreContainer">
+    <EntitySet Name="LOOKUPRole" EntityType="Self.LOOKUPRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SYSUser" EntityType="Self.SYSUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SYSUserProfile" EntityType="Self.SYSUserProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SYSUserRole" EntityType="Self.SYSUserRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TechInfo" EntityType="Self.TechInfo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__SYSUserPr__SYSUs__36B12243" Association="Self.FK__SYSUserPr__SYSUs__36B12243">
+      <End Role="SYSUser" EntitySet="SYSUser" />
+      <End Role="SYSUserProfile" EntitySet="SYSUserProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SYSUserRo__LOOKU__3C69FB99" Association="Self.FK__SYSUserRo__LOOKU__3C69FB99">
+      <End Role="LOOKUPRole" EntitySet="LOOKUPRole" />
+      <End Role="SYSUserRole" EntitySet="SYSUserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SYSUserRo__SYSUs__3D5E1FD2" Association="Self.FK__SYSUserRo__SYSUs__3D5E1FD2">
+      <End Role="SYSUser" EntitySet="SYSUser" />
+      <End Role="SYSUserRole" EntitySet="SYSUserRole" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

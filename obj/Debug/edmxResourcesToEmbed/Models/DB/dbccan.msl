@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbccanModelStoreContainer" CdmEntityContainer="dbccanEntities">
+    <EntitySetMapping Name="LOOKUPRoles">
+      <EntityTypeMapping TypeName="dbccanModel.LOOKUPRole">
+        <MappingFragment StoreEntitySet="LOOKUPRole">
+          <ScalarProperty Name="LOOKUPRoleID" ColumnName="LOOKUPRoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+          <ScalarProperty Name="RowCreatedSYSUserID" ColumnName="RowCreatedSYSUserID" />
+          <ScalarProperty Name="RowCreatedDateTime" ColumnName="RowCreatedDateTime" />
+          <ScalarProperty Name="RowModifiedSYSUserID" ColumnName="RowModifiedSYSUserID" />
+          <ScalarProperty Name="RowModifiedDateTime" ColumnName="RowModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYSUsers">
+      <EntityTypeMapping TypeName="dbccanModel.SYSUser">
+        <MappingFragment StoreEntitySet="SYSUser">
+          <ScalarProperty Name="SYSUserID" ColumnName="SYSUserID" />
+          <ScalarProperty Name="NIK" ColumnName="NIK" />
+          <ScalarProperty Name="PasswordEncryptedText" ColumnName="PasswordEncryptedText" />
+          <ScalarProperty Name="RowCreatedSYSUserID" ColumnName="RowCreatedSYSUserID" />
+          <ScalarProperty Name="RowCreatedDateTime" ColumnName="RowCreatedDateTime" />
+          <ScalarProperty Name="RowModifiedSYSUserID" ColumnName="RowModifiedSYSUserID" />
+          <ScalarProperty Name="RowModifiedDateTime" ColumnName="RowModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYSUserProfiles">
+      <EntityTypeMapping TypeName="dbccanModel.SYSUserProfile">
+        <MappingFragment StoreEntitySet="SYSUserProfile">
+          <ScalarProperty Name="SYSUserProfileID" ColumnName="SYSUserProfileID" />
+          <ScalarProperty Name="SYSUserID" ColumnName="SYSUserID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NIK" ColumnName="NIK" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="RowCreatedSYSUserID" ColumnName="RowCreatedSYSUserID" />
+          <ScalarProperty Name="RowCreatedDateTime" ColumnName="RowCreatedDateTime" />
+          <ScalarProperty Name="RowModifiedSYSUserID" ColumnName="RowModifiedSYSUserID" />
+          <ScalarProperty Name="RowModifiedDateTime" ColumnName="RowModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYSUserRoles">
+      <EntityTypeMapping TypeName="dbccanModel.SYSUserRole">
+        <MappingFragment StoreEntitySet="SYSUserRole">
+          <ScalarProperty Name="SYSUserRoleID" ColumnName="SYSUserRoleID" />
+          <ScalarProperty Name="SYSUserID" ColumnName="SYSUserID" />
+          <ScalarProperty Name="LOOKUPRoleID" ColumnName="LOOKUPRoleID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RowCreatedSYSUserID" ColumnName="RowCreatedSYSUserID" />
+          <ScalarProperty Name="RowCreatedDateTime" ColumnName="RowCreatedDateTime" />
+          <ScalarProperty Name="RowModifiedSYSUserID" ColumnName="RowModifiedSYSUserID" />
+          <ScalarProperty Name="RowModifiedDateTime" ColumnName="RowModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TechInfoes">
+      <EntityTypeMapping TypeName="dbccanModel.TechInfo">
+        <MappingFragment StoreEntitySet="TechInfo">
+          <ScalarProperty Name="TechInfoID" ColumnName="TechInfoID" />
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="TQ" ColumnName="TQ" />
+          <ScalarProperty Name="AO" ColumnName="AO" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="TeNOSScomment" ColumnName="TeNOSScomment" />
+          <ScalarProperty Name="PIC" ColumnName="PIC" />
+          <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+          <ScalarProperty Name="Metro" ColumnName="Metro" />
+          <ScalarProperty Name="GPON" ColumnName="GPON" />
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="VLAN" ColumnName="VLAN" />
+          <ScalarProperty Name="SurveyTime" ColumnName="SurveyTime" />
+          <ScalarProperty Name="CustTag" ColumnName="CustTag" />
+          <ScalarProperty Name="SurveyTech" ColumnName="SurveyTech" />
+          <ScalarProperty Name="ODPTag" ColumnName="ODPTag" />
+          <ScalarProperty Name="PT1Com" ColumnName="PT1Com" />
+          <ScalarProperty Name="PT1End" ColumnName="PT1End" />
+          <ScalarProperty Name="PT1Tech" ColumnName="PT1Tech" />
+          <ScalarProperty Name="JTTime" ColumnName="JTTime" />
+          <ScalarProperty Name="JTEnd" ColumnName="JTEnd" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="ClosedTime" ColumnName="ClosedTime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
