@@ -1,0 +1,298 @@
+﻿@model PagedList.IPagedList<CCAN_Witel_Karawang.Models.DB.TechInfo>
+@using PagedList.Mvc;
+@Styles.Render("~/Content/corporate.css") @* costum css untuk halaman index home *@
+@{
+    ViewBag.Title = "Index";
+    int count;
+}
+
+<h2>Data Teknis</h2>
+
+<p>
+    @Html.ActionLink("Buat Datek Baru", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-3">
+                @Html.TextBox("id", null, new { @class = "form-control" })
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+}
+    <div class="table-container">
+        <table class="table">
+            <tr>
+                <th>
+                    <span>SID</span>
+                </th>
+                <th>
+                    TQ
+                </th>
+                <th>
+                    AO
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    OrderTime
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    TeNOSScomment
+                </th>
+                <th>
+                    PIC
+                </th>
+                <th>
+                    Kode Area
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#AreaCodeFilterOption" aria-expanded="false" aria-controls="collapseExample">
+                        Filter
+                    </button>
+                    @using (Html.BeginForm())
+                    {
+                    <div class="collapse" id="AreaCodeFilterOption">
+                        <input type="hidden" value="AreaCode" name="filterColumn">
+                        @{ count = 0; }
+                        @foreach (var r in ViewBag.AreaCodeFilterOption)
+                        {
+                            if ((String.Equals(r, "-")) || (count > 0))
+                            {
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="-" name="filterBy">Data tidak ada</label>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="@Html.Raw(r)" name="filterBy">@Html.Raw(r)</label>
+                                </div>
+                            }
+                            count++;
+                        }
+                        <button class="btn btn-default" type="submit">filter</button>
+                    </div>
+                    }
+                </th>
+                <th>
+                    Metro
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#MetroFilterOption" aria-expanded="false" aria-controls="collapseExample">
+                        Filter
+                    </button>
+                    @using (Html.BeginForm())
+                    {
+                    <div class="collapse" id="MetroFilterOption">
+                        <input type="hidden" value="Metro" name="filterColumn">
+                        @{ count = 0; }
+                        @foreach (var r in ViewBag.MetroFilterOption)
+                        {
+                            if (String.Equals(r, "-"))
+                            {
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="-" name="filterBy">Data tidak ada</label>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="@Html.Raw(r)" name="filterBy">@Html.Raw(r)</label>
+                                </div>
+                            }
+                            count++;
+                        }
+                        <button class="btn btn-default" type="submit">filter</button>
+                    </div>
+                    }
+                </th>
+                <th>
+                    GPON
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#GPONFilterOption" aria-expanded="false" aria-controls="collapseExample">
+                        Filter
+                    </button>
+                    <div class="collapse" id="GPONFilterOption">
+                        @{ count = 0; }
+                        @foreach (var r in ViewBag.GPONFilterOption)
+                        {
+                            if (String.Equals(r, "-") || (count > 0))
+                            {
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="-" name="filterBy">Data tidak ada</label>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="@Html.Raw(r)" name="filterBy">@Html.Raw(r)</label>
+                                </div>
+                            }
+                            count++;
+                        }
+                        <button class="btn btn-default" type="submit">filter</button>
+                    </div>
+                </th>
+                <th>
+                    SN
+                </th>
+                <th>
+                    VLAN
+                </th>
+                <th>
+                    SurveyTime
+                </th>
+                <th>
+                    CustTag
+                </th>
+                <th>
+                    SurveyTech
+                </th>
+                <th>
+                    ODPTag
+                </th>
+                <th>
+                    PT1Com
+                </th>
+                <th>
+                    PT1End
+                </th>
+                <th>
+                    PT1Tech
+                </th>
+                <th>
+                    JTTime
+                </th>
+                <th>
+                    JTEnd
+                </th>
+                <th>
+                    comment
+                </th>
+                <th>
+                    ClosedTime
+                </th>
+                <th>
+                    status
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#statusFilterOption" aria-expanded="false" aria-controls="collapseExample">
+                        Filter
+                    </button>
+                    <div class="collapse" id="statusFilterOption">
+                        @{ count = 0; }
+                        @foreach (var r in ViewBag.statusFilterOption)
+                        {
+                            if (String.Equals(r, "-") || (count > 0))
+                            {
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="-" name="filterBy">Data tidak ada</label>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="@Html.Raw(r)" name="filterBy">@Html.Raw(r)</label>
+                                </div>
+                            }
+                            count++;
+                        }
+                        <button class="btn btn-default" type="submit">filter</button>
+                    </div>
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TQ)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeNOSScomment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PIC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AreaCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Metro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GPON)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VLAN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SurveyTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustTag)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SurveyTech)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ODPTag)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PT1Com)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PT1End)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PT1Tech)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JTTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JTEnd)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.comment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClosedTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.status)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Corporate")"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        <a href="@Url.Action("Delete", "Corporate")"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

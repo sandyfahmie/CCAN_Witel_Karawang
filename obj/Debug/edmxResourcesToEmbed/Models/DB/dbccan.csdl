@@ -11,7 +11,7 @@
     <Property Name="RowCreatedDateTime" Type="DateTime" Precision="3" />
     <Property Name="RowModifiedSYSUserID" Type="Int32" Nullable="false" />
     <Property Name="RowModifiedDateTime" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="SYSUserRoles" Relationship="Self.FK__SYSUserRo__LOOKU__3C69FB99" FromRole="LOOKUPRole" ToRole="SYSUserRole" />
+    <NavigationProperty Name="SYSUserRoles" Relationship="Self.FK__SYSUserRo__LOOKU__37A5467C" FromRole="LOOKUPRole" ToRole="SYSUserRole" />
   </EntityType>
   <EntityType Name="SYSUser">
     <Key>
@@ -24,8 +24,8 @@
     <Property Name="RowCreatedDateTime" Type="DateTime" Precision="3" />
     <Property Name="RowModifiedSYSUserID" Type="Int32" Nullable="false" />
     <Property Name="RowModifiedDateTime" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="SYSUserProfiles" Relationship="Self.FK__SYSUserPr__SYSUs__36B12243" FromRole="SYSUser" ToRole="SYSUserProfile" />
-    <NavigationProperty Name="SYSUserRoles" Relationship="Self.FK__SYSUserRo__SYSUs__3D5E1FD2" FromRole="SYSUser" ToRole="SYSUserRole" />
+    <NavigationProperty Name="SYSUserProfiles" Relationship="Self.FK__SYSUserPr__SYSUs__3D5E1FD2" FromRole="SYSUser" ToRole="SYSUserProfile" />
+    <NavigationProperty Name="SYSUserRoles" Relationship="Self.FK__SYSUserRo__SYSUs__38996AB5" FromRole="SYSUser" ToRole="SYSUserRole" />
   </EntityType>
   <EntityType Name="SYSUserProfile">
     <Key>
@@ -42,7 +42,7 @@
     <Property Name="RowCreatedDateTime" Type="DateTime" Precision="3" />
     <Property Name="RowModifiedSYSUserID" Type="Int32" Nullable="false" />
     <Property Name="RowModifiedDateTime" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="SYSUser" Relationship="Self.FK__SYSUserPr__SYSUs__36B12243" FromRole="SYSUserProfile" ToRole="SYSUser" />
+    <NavigationProperty Name="SYSUser" Relationship="Self.FK__SYSUserPr__SYSUs__3D5E1FD2" FromRole="SYSUserProfile" ToRole="SYSUser" />
   </EntityType>
   <EntityType Name="SYSUserRole">
     <Key>
@@ -56,8 +56,8 @@
     <Property Name="RowCreatedDateTime" Type="DateTime" Precision="3" />
     <Property Name="RowModifiedSYSUserID" Type="Int32" Nullable="false" />
     <Property Name="RowModifiedDateTime" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="LOOKUPRole" Relationship="Self.FK__SYSUserRo__LOOKU__3C69FB99" FromRole="SYSUserRole" ToRole="LOOKUPRole" />
-    <NavigationProperty Name="SYSUser" Relationship="Self.FK__SYSUserRo__SYSUs__3D5E1FD2" FromRole="SYSUserRole" ToRole="SYSUser" />
+    <NavigationProperty Name="LOOKUPRole" Relationship="Self.FK__SYSUserRo__LOOKU__37A5467C" FromRole="SYSUserRole" ToRole="LOOKUPRole" />
+    <NavigationProperty Name="SYSUser" Relationship="Self.FK__SYSUserRo__SYSUs__38996AB5" FromRole="SYSUserRole" ToRole="SYSUser" />
   </EntityType>
   <EntityType Name="TechInfo">
     <Key>
@@ -67,16 +67,16 @@
     <Property Name="SID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TQ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="AO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="OrderTime" Type="DateTime" Precision="0" />
     <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="TeNOSScomment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="PIC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="AreaCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AreaCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Metro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="GPON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="SN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="VLAN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VLAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="SurveyTime" Type="DateTime" Precision="0" />
     <Property Name="CustTag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="SurveyTech" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -90,7 +90,7 @@
     <Property Name="ClosedTime" Type="DateTime" Precision="0" />
     <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
-  <Association Name="FK__SYSUserRo__LOOKU__3C69FB99">
+  <Association Name="FK__SYSUserRo__LOOKU__37A5467C">
     <End Role="LOOKUPRole" Type="Self.LOOKUPRole" Multiplicity="1" />
     <End Role="SYSUserRole" Type="Self.SYSUserRole" Multiplicity="*" />
     <ReferentialConstraint>
@@ -102,7 +102,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SYSUserPr__SYSUs__36B12243">
+  <Association Name="FK__SYSUserPr__SYSUs__3D5E1FD2">
     <End Role="SYSUser" Type="Self.SYSUser" Multiplicity="1" />
     <End Role="SYSUserProfile" Type="Self.SYSUserProfile" Multiplicity="*" />
     <ReferentialConstraint>
@@ -114,7 +114,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SYSUserRo__SYSUs__3D5E1FD2">
+  <Association Name="FK__SYSUserRo__SYSUs__38996AB5">
     <End Role="SYSUser" Type="Self.SYSUser" Multiplicity="1" />
     <End Role="SYSUserRole" Type="Self.SYSUserRole" Multiplicity="*" />
     <ReferentialConstraint>
@@ -132,15 +132,15 @@
     <EntitySet Name="SYSUserProfiles" EntityType="Self.SYSUserProfile" />
     <EntitySet Name="SYSUserRoles" EntityType="Self.SYSUserRole" />
     <EntitySet Name="TechInfoes" EntityType="Self.TechInfo" />
-    <AssociationSet Name="FK__SYSUserRo__LOOKU__3C69FB99" Association="Self.FK__SYSUserRo__LOOKU__3C69FB99">
+    <AssociationSet Name="FK__SYSUserRo__LOOKU__37A5467C" Association="Self.FK__SYSUserRo__LOOKU__37A5467C">
       <End Role="LOOKUPRole" EntitySet="LOOKUPRoles" />
       <End Role="SYSUserRole" EntitySet="SYSUserRoles" />
     </AssociationSet>
-    <AssociationSet Name="FK__SYSUserPr__SYSUs__36B12243" Association="Self.FK__SYSUserPr__SYSUs__36B12243">
+    <AssociationSet Name="FK__SYSUserPr__SYSUs__3D5E1FD2" Association="Self.FK__SYSUserPr__SYSUs__3D5E1FD2">
       <End Role="SYSUser" EntitySet="SYSUsers" />
       <End Role="SYSUserProfile" EntitySet="SYSUserProfiles" />
     </AssociationSet>
-    <AssociationSet Name="FK__SYSUserRo__SYSUs__3D5E1FD2" Association="Self.FK__SYSUserRo__SYSUs__3D5E1FD2">
+    <AssociationSet Name="FK__SYSUserRo__SYSUs__38996AB5" Association="Self.FK__SYSUserRo__SYSUs__38996AB5">
       <End Role="SYSUser" EntitySet="SYSUsers" />
       <End Role="SYSUserRole" EntitySet="SYSUserRoles" />
     </AssociationSet>

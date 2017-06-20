@@ -1,0 +1,224 @@
+﻿@model CCAN_Witel_Karawang.Models.DB.TechInfo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Hapus</h2>
+
+<h3>Apa anda yakin menghapus datek ini?</h3>
+<div>
+    <h4>Data Teknis</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeNOSScomment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeNOSScomment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PIC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PIC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Metro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Metro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GPON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GPON)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VLAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VLAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SurveyTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SurveyTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustTag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustTag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SurveyTech)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SurveyTech)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODPTag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODPTag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PT1Com)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PT1Com)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PT1End)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PT1End)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PT1Tech)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PT1Tech)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JTTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JTTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JTEnd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JTEnd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClosedTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClosedTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -61,16 +61,16 @@
     <Property Name="SID" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="TQ" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="AO" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="text" Nullable="false" />
     <Property Name="OrderTime" Type="date" />
     <Property Name="Address" Type="text" />
     <Property Name="TeNOSScomment" Type="text" />
     <Property Name="PIC" Type="varchar" MaxLength="50" />
-    <Property Name="AreaCode" Type="varchar" MaxLength="10" />
+    <Property Name="AreaCode" Type="varchar" MaxLength="50" />
     <Property Name="Metro" Type="varchar" MaxLength="50" />
     <Property Name="GPON" Type="varchar" MaxLength="50" />
     <Property Name="SN" Type="varchar" MaxLength="50" />
-    <Property Name="VLAN" Type="varchar" MaxLength="10" />
+    <Property Name="VLAN" Type="varchar" MaxLength="50" />
     <Property Name="SurveyTime" Type="date" />
     <Property Name="CustTag" Type="varchar" MaxLength="50" />
     <Property Name="SurveyTech" Type="varchar" MaxLength="50" />
@@ -84,7 +84,7 @@
     <Property Name="ClosedTime" Type="date" />
     <Property Name="status" Type="varchar" MaxLength="50" />
   </EntityType>
-  <Association Name="FK__SYSUserPr__SYSUs__36B12243">
+  <Association Name="FK__SYSUserPr__SYSUs__3D5E1FD2">
     <End Role="SYSUser" Type="Self.SYSUser" Multiplicity="1" />
     <End Role="SYSUserProfile" Type="Self.SYSUserProfile" Multiplicity="*" />
     <ReferentialConstraint>
@@ -96,7 +96,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SYSUserRo__LOOKU__3C69FB99">
+  <Association Name="FK__SYSUserRo__LOOKU__37A5467C">
     <End Role="LOOKUPRole" Type="Self.LOOKUPRole" Multiplicity="1" />
     <End Role="SYSUserRole" Type="Self.SYSUserRole" Multiplicity="*" />
     <ReferentialConstraint>
@@ -108,7 +108,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SYSUserRo__SYSUs__3D5E1FD2">
+  <Association Name="FK__SYSUserRo__SYSUs__38996AB5">
     <End Role="SYSUser" Type="Self.SYSUser" Multiplicity="1" />
     <End Role="SYSUserRole" Type="Self.SYSUserRole" Multiplicity="*" />
     <ReferentialConstraint>
@@ -126,15 +126,15 @@
     <EntitySet Name="SYSUserProfile" EntityType="Self.SYSUserProfile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SYSUserRole" EntityType="Self.SYSUserRole" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TechInfo" EntityType="Self.TechInfo" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__SYSUserPr__SYSUs__36B12243" Association="Self.FK__SYSUserPr__SYSUs__36B12243">
+    <AssociationSet Name="FK__SYSUserPr__SYSUs__3D5E1FD2" Association="Self.FK__SYSUserPr__SYSUs__3D5E1FD2">
       <End Role="SYSUser" EntitySet="SYSUser" />
       <End Role="SYSUserProfile" EntitySet="SYSUserProfile" />
     </AssociationSet>
-    <AssociationSet Name="FK__SYSUserRo__LOOKU__3C69FB99" Association="Self.FK__SYSUserRo__LOOKU__3C69FB99">
+    <AssociationSet Name="FK__SYSUserRo__LOOKU__37A5467C" Association="Self.FK__SYSUserRo__LOOKU__37A5467C">
       <End Role="LOOKUPRole" EntitySet="LOOKUPRole" />
       <End Role="SYSUserRole" EntitySet="SYSUserRole" />
     </AssociationSet>
-    <AssociationSet Name="FK__SYSUserRo__SYSUs__3D5E1FD2" Association="Self.FK__SYSUserRo__SYSUs__3D5E1FD2">
+    <AssociationSet Name="FK__SYSUserRo__SYSUs__38996AB5" Association="Self.FK__SYSUserRo__SYSUs__38996AB5">
       <End Role="SYSUser" EntitySet="SYSUser" />
       <End Role="SYSUserRole" EntitySet="SYSUserRole" />
     </AssociationSet>
