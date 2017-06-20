@@ -12,7 +12,7 @@ aplikasi web internal ccan witel karawang untuk datek
 1. Buat lalu Eksekusi SQL berikut
   * Sesuaikan script dibawah sesuai dengan format yang dikehendaki
 ```
-USE **[dbccan]**
+USE [dbccan]
 GO
 CREATE TABLE [dbo].[LOOKUPRole](
   [LOOKUPRoleID] [int] IDENTITY(1,1) NOT NULL,
