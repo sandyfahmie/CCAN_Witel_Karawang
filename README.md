@@ -104,6 +104,7 @@ CREATE TABLE [dbo].[SYSUserRole](
   [status]        VARCHAR (50) DEFAULT ('-') NULL,
   PRIMARY KEY CLUSTERED ([TechInfoID] ASC)
 )
+GO
 ```
 ## Menghubungkan Aplikasi Web dengan Database menggunakan Entity Data Model
 1. Buat Folder baru dengan nama **DB** di direktori **./Models/** kemudian klik kanan di **./Models/DB/** lalu pilih **Add > New Item**
