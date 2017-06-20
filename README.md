@@ -3,6 +3,7 @@ aplikasi web internal ccan witel karawang untuk datek
 
 ## NuGet package yang dibutuhkan
 - PagedList.Mvc
+- FontAwesome-ASP.NET
 
 ## Persiapan Database
 1. Di menu visual studio pilih **View > SQL Server Object Explorer**
