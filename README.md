@@ -105,7 +105,7 @@ CREATE TABLE [dbo].[SYSUserRole](
 )
 ```
 ## Menghubungkan Aplikasi Web dengan Database menggunakan Entity Data Model
-1. klik kanan di **./Models/DB/** kemudian pilih **Add > New Item**
+1. Buat Folder baru dengan nama **DB** di direktori **./Models/** kemudian klik kanan di **./Models/DB/** lalu pilih **Add > New Item**
 1. **Visual C# > Data > ADO.NET Entity Data Model**, isikan dengan nama **dbccan** (disarankan penamaan sama) kemudian pilih add
 1. Pilih **EF Designer from database** lalu Next, Pilih **New Connection...**
 1. Isikan Server name sesuai dengan server dimana database berada, pada contoh sebelumnya di **Persiapan Database** Server name-nya adalah **(localdb)\ProjectsV13**
