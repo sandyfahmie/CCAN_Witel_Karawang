@@ -75,7 +75,7 @@ GO
 ALTER TABLE [dbo].[SYSUserRole] WITH CHECK ADD FOREIGN KEY([SYSUserID])
 REFER
 
-CREATE TABLE [dbo].[SYSUserRole](
+CREATE TABLE [dbo].[TechInfo](
   [TechInfoID]    INT          IDENTITY (1, 1) NOT NULL,
   [SID]           VARCHAR (50) NOT NULL,
   [TQ]            VARCHAR (50) NOT NULL,
