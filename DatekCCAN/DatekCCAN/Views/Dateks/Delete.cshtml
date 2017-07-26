@@ -1,0 +1,191 @@
+@model DatekCCAN.Models.Datek
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+<p class="text-danger">@ViewData["ErrorMessage"]</p>
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Datek</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="ID" />
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceOrder)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServiceOrder)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TQ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TQ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AO)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TglOrderItenos)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TglOrderItenos)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Alamat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Alamat)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.KomenItenos)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.KomenItenos)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pic)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pic)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AreaCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Metro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Metro)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dat)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Gpon)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gpon)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SN)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vlan)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vlan)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TglPerintahSurvei)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TglPerintahSurvei)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TglHasilSurvei)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TglHasilSurvei)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TaggingPelanggan)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TaggingPelanggan)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TeknisiSurvei)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TeknisiSurvei)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TaggingODP)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TaggingODP)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TglPerintahPT1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TglPerintahPT1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TglSelesaiPTmin1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TglSelesaiPTmin1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TeknisiPTmin1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TeknisiPTmin1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TglPerintahJT)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TglPerintahJT)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TglJTSelesai)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TglJTSelesai)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Komen)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Komen)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TglClosed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TglClosed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

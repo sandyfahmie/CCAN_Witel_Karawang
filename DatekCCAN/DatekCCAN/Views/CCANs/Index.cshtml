@@ -1,0 +1,225 @@
+@model PaginatedList<DatekCCAN.Models.CCAN>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>CCAN</h2>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Service Order</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">SID</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">TQ</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">AO</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Nama</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Tangggal Order Itenos</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Alamat</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Komen Tenos</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Pic</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Area Code</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Metro</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Datek</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Gpon</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">SN</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Vlan</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Tanggal Perintah Survei</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Tanggal Hasil Survei</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Tagging Pelanggan</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Teknisi Survei</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Tagging ODP</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Tanggal Perintah PT</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Tanggal Selesai PT-1</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Teknisi PT-1</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Tanggal Perintah JT</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Tanggal JT Selesai</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Komentar</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Tanggal Closed</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Status</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceOrder5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SID5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TQ5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AO5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglOrderItenos5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alamat5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KomenItenos5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pic5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreaCode5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Metro5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dat5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gpon5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SN5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vlan5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglPerintahSurvei5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglHasilSurvei5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaggingPelanggan5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeknisiSurvei5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaggingODP5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglPerintahPT15)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglSelesaiPTmin15)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeknisiPTmin15)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglPerintahJT5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglJTSelesai5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Komen5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglClosed5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status5)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID5">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID5">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID5">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>

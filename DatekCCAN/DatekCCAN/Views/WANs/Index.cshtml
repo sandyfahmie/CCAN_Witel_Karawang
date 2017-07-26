@@ -1,0 +1,197 @@
+@model IEnumerable<DatekCCAN.Models.WAN>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceOrder4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SID4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TQ4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AO4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TglOrderItenos4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Alamat4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.KomenItenos4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pic4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AreaCode4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Metro4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dat4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gpon4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SN4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Vlan4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TglPerintahSurvei4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TglHasilSurvei4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TaggingPelanggan4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TeknisiSurvei4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TaggingODP4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TglPerintahPT14)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TglSelesaiPTmin14)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TeknisiPTmin14)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TglPerintahJT4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TglJTSelesai4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Komen4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TglClosed4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status4)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceOrder4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SID4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TQ4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AO4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglOrderItenos4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alamat4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KomenItenos4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pic4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreaCode4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Metro4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dat4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gpon4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SN4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vlan4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglPerintahSurvei4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglHasilSurvei4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaggingPelanggan4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeknisiSurvei4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaggingODP4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglPerintahPT14)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglSelesaiPTmin14)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeknisiPTmin14)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglPerintahJT4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglJTSelesai4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Komen4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglClosed4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status4)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID4">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID4">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID4">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

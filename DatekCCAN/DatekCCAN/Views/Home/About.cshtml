@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DatekCCAN.Models.SchoolViewModels.EnrollmentDateGroup>
+
+@{
+    ViewData["Title"] = "Statistics";
+}
+
+<h2>Jumlah Tanggal Closed</h2>
+
+<table>
+    <tr>
+        <th>
+            Tgl Closed
+        </th>
+        <th>
+            Datek
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglClosed)
+            </td>
+            <td>
+                @item.DatekCount
+            </td>
+        </tr>
+    }
+</table>
